@@ -1,0 +1,53 @@
+#######################################
+# Syntax Coloring Map For Redgick_Laboite
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Redgick_Laboite	KEYWORD1
+Tile	KEYWORD1
+Lenuage	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+clear	KEYWORD2
+clearScreen	KEYWORD2
+print	KEYWORD2
+drawBitmap	KEYWORD2
+getScreen	KEYWORD2
+getID	KEYWORD2
+setID	KEYWORD2
+getLastActivity	KEYWORD2
+setLastActivity	KEYWORD2
+getPreviousId	KEYWORD2
+setPreviousId	KEYWORD2
+getDuration	KEYWORD2
+setDuration	KEYWORD2
+getBrigthness	KEYWORD2
+setBrigthness	KEYWORD2
+exist	KEYWORD2
+needUpdate	KEYWORD2
+
+getBoite	KEYWORD2
+getTileRaw	KEYWORD2
+updateBuffer	KEYWORD2
+updateTile	KEYWORD2
+printBuffer	KEYWORD2
+getTileScreen	KEYWORD2
+getNextTile	KEYWORD2
+getTile	KEYWORD2
+
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+TILES_MAX_NUMBER	LITERAL1
