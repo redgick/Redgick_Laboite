@@ -1,6 +1,6 @@
 /*
    Firmware for the connected display "laboite pro" by Redgick.
-   Create an account on "https://lenuage.redgick.com" and get an api key.
+   Create an account on "https://lenuage.io" and get an api key.
 */
 
 // Redgick prototype 32x16 white square LEDs
@@ -19,11 +19,11 @@ Screen welcome(32, 16, MONOCHROME); // with, height, colors);
 
 // Backend connection
 Lenuage lenuage(
-  "http://lenuage.redgick.com",             // server url
+  "http://lenuage.io",                      // server url
   "00000000-0000-0000-0000-000000000000",   // api key
   // the server ssl fingerprint is needed for a HTTPS connection
   // get it using the following command in a terminal:
-  // echo | openssl s_client -connect redgick.com:443 |& openssl x509 -fingerprint -noout
+  // echo | openssl s_client -connect lenuage.io:443 |& openssl x509 -fingerprint -noout
   "AD:4D:92:32:D3:D2:5A:C4:5B:62:B6:B4:94:BF:10:94:4F:71:A5:5A"
 );
 
