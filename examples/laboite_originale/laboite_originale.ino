@@ -1,5 +1,5 @@
 /*
-   Firmware for the connected display "laboite maker" by Redgick.
+   Firmware for the connected display "laboite original" by Redgick.
    Create an account on "https://lenuage.io" and get an api key.
 */
 
