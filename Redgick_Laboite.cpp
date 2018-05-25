@@ -310,7 +310,7 @@ void Lenuage::updateTile(int index) {
         tiles[index].print(x, y, content);
       }
       else {
-        if (type.equals("icon")) {
+        if (type.equals("bitmap")) {
           tiles[index].drawBitmap(x, y, Bitmap(width, height, content), RED);
         }
         else {
