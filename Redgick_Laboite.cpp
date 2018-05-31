@@ -299,6 +299,16 @@ void Lenuage::updateTile(int index) {
       height = int(item_data["height"]);
     }
 
+    int color = RED;
+    if (item_data.containsKey("color")) {
+      color = int(item_data["color"]);
+    }
+
+    int font = FONT_DEFAULT;
+    if (item_data.containsKey("font")) {
+      font = int(item_data["font"]);
+    }
+
     String content = "";
     if (item_data.containsKey("content")) {
       content = item_data["content"].asString();
@@ -307,11 +317,11 @@ void Lenuage::updateTile(int index) {
     if (item_data.containsKey("type")) {
       String type = item_data["type"].asString();
       if (type.equals("text")) {
-        tiles[index].print(x, y, content);
+        tiles[index].print(x, y, content, font, color);
       }
       else {
         if (type.equals("bitmap")) {
-          tiles[index].drawBitmap(x, y, Bitmap(width, height, content), RED);
+          tiles[index].drawBitmap(x, y, Bitmap(width, height, content), color);
         }
         else {
 #ifdef DEBUG

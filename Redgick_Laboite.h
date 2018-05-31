@@ -26,6 +26,7 @@ class Tile {
 
     void clearScreen() { _screen.clear(); };
     void print(uint8_t x, uint8_t y, String s) { _screen.print(x, y, s); };
+    void print(uint8_t x, uint8_t y, String s, uint8_t font_name, uint8_t color) { _screen.print(x, y, s, font_name, color); };
     void drawBitmap(uint8_t x, uint8_t y, Bitmap bitmap, uint8_t color) { _screen.drawBitmap(x, y, bitmap, color); };
     Screen getScreen() { return _screen; };
 
