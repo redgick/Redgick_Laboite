@@ -38,8 +38,8 @@ class Tile {
     uint8_t getPreviousId() {return _previous_id;};
     void setPreviousId(uint8_t value) {_previous_id = value;};
 
-    uint8_t getDuration() {return _duration;};
-    void setDuration(uint8_t value) {_duration = value;};
+    uint16_t getDuration() {return _duration;};
+    void setDuration(uint16_t value) {_duration = value;};
 
     uint8_t getBrightness() {return _brightness;};
     void setBrightness(uint8_t value) {_brightness = value;};
@@ -57,7 +57,7 @@ class Tile {
     uint64_t _last_activity;
     uint8_t  _previous_id;
     Screen   _screen;
-    uint8_t  _duration;
+    uint16_t  _duration;
     uint8_t  _brightness;
     bool     _exist;
     bool     _update;
