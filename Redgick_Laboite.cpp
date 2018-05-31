@@ -262,7 +262,7 @@ void Lenuage::updateTile(int index) {
   }
 
   if (root.containsKey("duration")) {
-    tiles[index].setDuration(int(root["duration"]));
+    tiles[index].setDuration(uint16_t(root["duration"]));
   }
 
   if (root.containsKey("brightness")) {
