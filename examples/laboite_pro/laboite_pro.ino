@@ -69,7 +69,7 @@ void loop() {
   lenuage.printBuffer();
 
   // We wait before displaying the next tile
-  int delai = lenuage.getTile(current_id).getDuration() * 1000;
+  unsigned int delai = lenuage.getTile(current_id).getDuration();
   while (millis() < top + delai) {
     delay(50);
   }
