@@ -11,7 +11,7 @@
 // Function that handles the creation and setup of instances
 
 Tile::Tile() {
-  _screen.init(32, 16, MONOCHROME);
+  _screen.init(32, 16, BICOLOR);
   clear();
 };
 
