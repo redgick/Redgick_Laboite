@@ -30,6 +30,10 @@ In the Arduino IDE, look at `File/Examples/Redgick_Laboite` folder to load an ex
 _laboîte maker_ as been tested with two types of NodeMCU : _V2_ and _V3_.
 Both come with the chip _ESP-12E_. If you compare the pin layout of the _V3_, there’s only a tiny difference to the _V2_ layout. _V3_ use one of the two reserve pins for USB power out and the other for an additional GND.
 
+![schematic](https://github.com/redgick/Redgick_Laboite/blob/master/images/nodemcu_v2_v3.jpg?raw=true)
+_NodeMCU V2 / NodeMCU V3_
+
+
 <table>
   <tr>
     <th colspan=2>NodeMCU V2</th><th colspan=2>NodeMCU V3</th><th>LED Matrix</th>
@@ -56,7 +60,7 @@ Both come with the chip _ESP-12E_. If you compare the pin layout of the _V3_, th
 
  * MAX7219 Dot Matrix Modules should be connected together in serial. Only input pins are welded on the modules, so start by welding output pins on the upper MAX7219 Dot Matrix Module.
  * Then insert the Colson collar in the frame to fasten the NodeMCU on the rear side of the frame.
- * Instert MAX7219 Dot Matrix Modules in the frame and plug the PMMA screen on it.
+ * Insert MAX7219 Dot Matrix Modules in the frame and plug the PMMA screen on it.
  * Connect the MAX7219 Dot Matrix Modules and the NodeMCU following the schematic bellow :
 
 ![schematic](https://github.com/redgick/Redgick_Laboite/blob/master/images/laboite_bb.png?raw=true)
