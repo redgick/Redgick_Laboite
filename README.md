@@ -19,11 +19,13 @@ In the Arduino IDE, look at `File/Examples/Redgick_Laboite` folder to load an ex
 
 ### Material
 
- * 1 x NodeMcu _V2_ or _V3_ ;
- * 2 x MAX7219 Dot Matrix Modules ;
- * 1 x frame 3D printed ;
- * 1 x PMMA screen laser cutted ;
+ * 1 x NodeMcu _V2_ or _V3_;
+ * 2 x MAX7219 Dot Matrix Modules;
+ * 1 x frame 3D printed ([download 3D model](https://github.com/redgick/Redgick_Laboite/blob/master/CAD/laboite_maker_frame_v1.9.stl?raw=true));
+ * 1 x PMMA screen laser cutted ([download 2D model](https://github.com/redgick/Redgick_Laboite/blob/master/CAD/laboite_maker_screen_v1.9.svg?raw=true));
  * 1 x colson collar.
+
+The CAD models of the frame and the screen can be edited on [Tinkercad](https://www.tinkercad.com/things/hslmXMSMxwP)
 
 ### Schematic
 
