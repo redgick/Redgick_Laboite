@@ -15,55 +15,61 @@
 
 In the Arduino IDE, look at `File/Examples/Redgick_Laboite` folder to load an example sketch.
 
-## Building laboîte maker
+## Building _laboîte maker_
 
 ### Material
 
- *  1 x [NodeMcu V3](https://www.aliexpress.com/item/NodeMcu-Lua-WIFI-development-board-based-on-the-ESP8266-Internet-of-things/32338121965.html)
-
-![NodeMcu V3](https://github.com/redgick/Redgick_Laboite/blob/master/images/nodemcu.jpg?raw=true)
-
- * 2 x [MAX7219 Dot Matrix Module](https://www.aliexpress.com/item/MAX7219-Dot-Matrix-Module-For-Arduino-Microcontroller-4-In-One-Display-with-5P-Line/32618155357.html)
-
-![MAX7219 Dot Matrix Module](https://github.com/redgick/Redgick_Laboite/blob/master/images/max7219.jpg?raw=true)
-
+ * 1 x NodeMcu _V2_ or _V3_ ;
+ * 2 x MAX7219 Dot Matrix Modules ;
+ * 1 x frame 3D printed ;
+ * 1 x PMMA screen laser cutted ;
+ * 1 x colson collar.
 
 ### Schematic
 
+_laboîte maker_ as been tested with two types of NodeMCU : _V2_ and _V3_.
+Both come with the chip _ESP-12E_. If you compare the pin layout of the _V3_, there’s only a tiny difference to the _V2_ layout. _V3_ use one of the two reserve pins for USB power out and the other for an additional GND.
+
 <table>
   <tr>
-    <th colspan=2>NodeMCU</th><th>LED Matrix</th>
+    <th colspan=2>NodeMCU V2</th><th colspan=2>NodeMCU V3</th><th>LED Matrix</th>
   </tr>
   <tr>
-    <th>Pin</th><th>GPIO</th><th>Pin</th>
+    <th>Pin</th><th>GPIO</th><th>Pin</th><th>GPIO</th><th>Pin</th>
   </tr>
   <tr>
-  <td>Vin (+5V) <strong>(*)</strong></td><td>-</td><td>+12V</td>
+  <td>Vin (+5V)</td><td>-</td><td>VV (+5V)</td><td>-</td><td>+12V</td>
   </tr>
   <tr>
-    <td>GND</td><td>-</td><td>GND</td>
+    <td>GND</td><td>-</td><td>GND</td><td>-</td><td>GND</td>
   </tr>
   <tr>
-    <td>D7</td><td>GPIO13</td><td>DIN</td>
+    <td>D7</td><td>GPIO13</td><td>D7</td><td>GPIO13</td><td>DIN</td>
   </tr>
   <tr>
-    <td>D8</td><td>GPIO15</td><td>CS</td>
+    <td>D8</td><td>GPIO15</td><td>D8</td><td>GPIO15</td><td>CS</td>
   </tr>
   <tr>
-    <td>D5</td><td>GPIO14</td><td>CLK</td>
+    <td>D5</td><td>GPIO14</td><td>D5</td><td>GPIO14</td><td>CLK</td>
   </tr>
 </table>
 
-**(*)** or *3V3* for older NodeMCU boards.
+ * MAX7219 Dot Matrix Modules should be connected together in serial. Only input pins are welded on the modules, so start by welding output pins on the upper MAX7219 Dot Matrix Module.
+ * Then insert the Colson collar in the frame to fasten the NodeMCU on the rear side of the frame.
+ * Instert MAX7219 Dot Matrix Modules in the frame and plug the PMMA screen on it.
+ * Connect the MAX7219 Dot Matrix Modules and the NodeMCU following the schematic bellow :
 
 ![schematic](https://github.com/redgick/Redgick_Laboite/blob/master/images/laboite_bb.png?raw=true)
 
-
-### lenuage
-Account creation, api key, configuration, ...
-
+### lenuage.io
+ * Create an account in [lenuage.io](https://lenuage.io/) and add a new _boîte_. An API Key is automatically generated.
+ 
 ### Firmware
+ * Insert the API Key in the Arduino code and flash the NodeMCU.
 
 ### WiFi
+ * At the first boot, _laboîte_ create an WiFi access point named "laboite". Connect to it with your smartphone, open a navigator à http://192.168.4.1 and set the SSID and Password of you WiFi network.
+ * _laboîte_ will reboot and automatically connect to the given WiFi network. That's it !
 
 ### Going further ...
+Explore _lenuage.io_ interface to configure apps and have fun !
