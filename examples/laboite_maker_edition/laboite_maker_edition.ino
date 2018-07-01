@@ -3,9 +3,9 @@
    Create an account on "https://lenuage.io" and get an api key.
 */
 
-// Two modules MAX7219 4 in 1 connected in serial to compose a monochrome 32x16 LED matrix
+// Two modules MAX7219 4 in 1 connected in series to get 32×16 LED dotmatrix
 #include <Redgick_MatrixMAX72XX.h>
-Redgick_MatrixMAX72XX afficheur;
+Redgick_MatrixMAX72XX matrix;
 
 // We need a WiFi connection
 #include <ESP8266WiFi.h>
@@ -29,52 +29,51 @@ Lenuage lenuage(
 
 void setup() {
   // Serial initialization for debugging
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   // Display initialization
-  afficheur.init();
-  afficheur.intensity(10);
+  matrix.init();
+  matrix.intensity(10);
 
-  // message d'accueil
+  // Welcome message
   welcome.print(0, 2, "la");
   welcome.print(1, 9, "boite");
-  afficheur.display(welcome.getBuffer());
+  matrix.display(welcome.getBuffer());
 
-  // we start by connecting to a WiFi network
+  // Connecting to a wifi network using WiFiManager
   WiFiManager wifiManager;
   wifiManager.autoConnect("laboite");
 
   // We get a connection !
   welcome.print(27, 0, "c");
-  afficheur.display(welcome.getBuffer());
+  matrix.display(welcome.getBuffer());
 
   // First tiles buffer update
   lenuage.updateBuffer();
 }
 
-int current_id = lenuage.getNextTile(0);
-
+int currentId = lenuage.getNextTile(0);
 void loop() {
   // Current tile displaying
-  afficheur.intensity(lenuage.getTile(current_id).getBrightness());
-  afficheur.display(lenuage.getTile(current_id).getScreen().getBuffer());
+  matrix.intensity(lenuage.getTile(currentId).getBrightness());
+  matrix.display(lenuage.getTile(currentId).getScreen().getBuffer());
 
   // Top !
   unsigned long top = millis();
 
-  // Tiles buffer update
-  lenuage.updateBuffer();
-
-  // Debugging :
-  lenuage.printBuffer();
-
-  // We wait before displaying the next tile
-  unsigned int delai = lenuage.getTile(current_id).getDuration();
-  while (millis() < top + delai) {
-    delay(50);
+  if(currentId == lenuage.getNextTile(0)) {
+    // Tiles buffer update
+    lenuage.updateBuffer();
+  
+    // Debugging :
+    lenuage.printBuffer();
   }
+  
+  // We wait before displaying the next tile
+  unsigned int duration = lenuage.getTile(currentId).getDuration();
+  while (millis() < top + duration)
+    delay(50);
 
   // Which is the next tile ?
-  current_id = lenuage.getNextTile(current_id);
-
+  currentId = lenuage.getNextTile(currentId);
 }
