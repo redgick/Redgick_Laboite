@@ -71,7 +71,18 @@ _NodeMCU V2 / NodeMCU V3_
  * Create an account in [lenuage.io](https://lenuage.io/) and add a new _boîte_. An API Key is automatically generated.
  
 ### Firmware
- * Insert the API Key in the Arduino code and flash the NodeMCU.
+ * Start [Arduino IDE](https://www.arduino.cc/en/Main/Software) and open `File > Preferences` window.
+ * Enter `http://arduino.esp8266.com/stable/package_esp8266com_index.json` into `Additional Board Manager URLs` field.
+ * Open `Tools > Board: > Boards Manager...` menu and find __ESP8266 by ESP8266 Community__ and install it.
+ * Select `Tools > Board > NodeMCU 1.0 (ESP-12E Module)`.
+ * Open library manager from `Sketch > Include library > Manage Libraries...` and find __ArduinoJson by Benoit Blanchon__ and install the latest __version 5__ (do not install a beta version 6).
+ * Then find __WifiManager by tzapu__ and install the latest version.
+ * Download [Redgick_GFX libraries](https://github.com/redgick/Redgick_GFX), copy and past __Redgick-GFX__ and __Redgick_MatrixMax72XX__ into your Arduino library folder.
+ * Download [Redgick-Laboite](https://github.com/redgick/Redgick_Laboite) into your Arduino lbrary folder. Remove the trailling  extension (_-master_) of the library folder name.
+ * Open `File > Exemples > Redgick_laboite > laboite_maker_edition`
+ * First click on `Verify/Compile`, if an error message appears, get sure that you have correctly placed the files with the right name.
+ * Replace `00000000-0000-0000-0000-000000000000` with your API key
+ * Connect the NodeMCU, upload and enjoy !
 
 ### WiFi
  * At the first boot, _laboîte_ create an WiFi access point named "laboite". Connect to it with your smartphone, open a navigator à http://192.168.4.1 and set the SSID and Password of you WiFi network.
