@@ -30,14 +30,14 @@ class Tile {
     void drawBitmap(uint8_t x, uint8_t y, Bitmap bitmap, uint8_t color) { _screen.drawBitmap(x, y, bitmap, color); };
     Screen getScreen() { return _screen; };
 
-    uint8_t getId() {return _id;};
-    void setId(uint8_t value) {_id = value;};
+    uint16_t getId() {return _id;};
+    void setId(uint16_t value) {_id = value;};
 
     uint64_t getLastActivity() {return _last_activity;};
     void setLastActivity(uint64_t value) {_last_activity = value;};
 
-    uint8_t getPreviousId() {return _previous_id;};
-    void setPreviousId(uint8_t value) {_previous_id = value;};
+    uint16_t getPreviousId() {return _previous_id;};
+    void setPreviousId(uint16_t value) {_previous_id = value;};
 
     uint16_t getDuration() {return _duration;};
     void setDuration(uint16_t value) {_duration = value;};
@@ -54,9 +54,9 @@ class Tile {
 
   // library-accessible "private" interface
   private:
-    uint8_t  _id;
+    uint16_t  _id;
     uint64_t _last_activity;
-    uint8_t  _previous_id;
+    uint16_t  _previous_id;
     Screen   _screen;
     uint16_t  _duration;
     uint8_t  _brightness;

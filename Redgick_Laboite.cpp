@@ -123,14 +123,14 @@ void Lenuage::updateBuffer() {
   }
 
   // pour chaque tuile on renseigne l'id de la tuile précédente
-  uint8_t previous_id = 0;
+  uint16_t previous_id = 0;
 
   // on explore l'arbre json
   JsonArray& data = root["tiles"];
   for (auto tile : data) {
     JsonObject& tile_data = tile;
 
-    uint8_t id = 0;
+    uint16_t id = 0;
     uint32_t last_activity = 0;
 
     if (tile_data.containsKey("id")) {
