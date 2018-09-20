@@ -1,6 +1,8 @@
 # Redgick_Laboite
 *laboite* is a connected clock that displays a lot of information from the Internetz.
 
+![laboite.gif](images/laboite.gif)
+
 ## Requirement
 
  * [Redgick_GFX](https://github.com/redgick/Redgick_GFX), the core graphics library;
