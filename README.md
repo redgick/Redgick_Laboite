@@ -78,7 +78,7 @@ _NodeMCU V2 / NodeMCU V3_
  * Open `Tools > Board: > Boards Manager...` menu and find __ESP8266 by ESP8266 Community__ and install it.
  * Select `Tools > Board > NodeMCU 1.0 (ESP-12E Module)`.
  * Open library manager from `Sketch > Include library > Manage Libraries...` and find __ArduinoJson by Benoit Blanchon__ and install the latest __version 5__ (do not install a beta version 6).
- * Then find __WifiManager by tzapu__ and install the latest version.
+ * Then find __WifiManager by tzapu__ and install the stable version _v0.12.0_.
  * Download [Redgick_GFX libraries](https://github.com/redgick/Redgick_GFX), copy and past __Redgick-GFX__ and __Redgick_MatrixMax72XX__ into your Arduino library folder.
  * Download [Redgick-Laboite](https://github.com/redgick/Redgick_Laboite) into your Arduino lbrary folder. Remove the trailling  extension (_-master_) of the library folder name.
  * Open `File > Exemples > Redgick_laboite > laboite_maker_edition`
